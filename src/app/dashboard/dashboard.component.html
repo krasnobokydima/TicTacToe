@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="title">
+    <p
+      class="playerX"
+      [ngClass]="{ 'playerX-active': gameService.player === 'X' }"
+    >
+      {{ gameService.playerName | async }}
+    </p>
+    <h2 class="check">{{ check }}</h2>
+    <p
+      class="playerO"
+      [ngClass]="{ 'playerO-active': gameService.player === 'O' }"
+    >player2</p>
+  </div>
+  <div
+    class="dashboard"
+    [ngClass]="{
+      'dashboard-O': gameService.winner === 'O',
+      'dashboard-X': gameService.winner === 'X',
+      'dashboard-friends': !gameService.winner && !gameService.isGameWork
+    }"
+  >
+    <button
+      *ngFor="let btn of gameService.board | async; let i = index"
+      mat-button
+      class="button"
+      [disabled]="!gameService.isGameWork"
+      (click)="setButtonValue(i)"
+    >
+      {{ btn || "" }}
+    </button>
+  </div>
+  <div class="buttons-container">
+    <button
+      mat-raised-button
+      color="primary"
+      [disabled]="!gameService.playersCeils.X.length"
+      (click)="startGame()"
+    >{{ startButton }}</button>
+    <button
+      mat-raised-button
+      color="warn"
+      [disabled]="!(gameService.playersCeils.X.length || gameService.games)"
+      (click)="reset()"
+    >reset</button>
+  </div>
+</div>
