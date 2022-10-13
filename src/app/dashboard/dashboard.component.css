@@ -1,0 +1,84 @@
+.button {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  background-color: orange;
+
+  font-size: 4em;
+  color: rgb(124, 124, 124);
+}
+
+.button:disabled {
+  background-color: lightgoldenrodyellow;
+}
+
+.buttons-container {
+  margin: 10px 0 0 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.check {
+  text-align: center;
+}
+
+.container {
+  margin: auto;
+  padding-top: 50px;
+  width: min-content;
+}
+
+.dashboard {
+  padding: 10px;
+  border: 10px solid darkorange;
+  border-radius: 30px;
+  background-color: lightblue;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.dashboard-O {
+  box-shadow: 2px 4px 24px blue;
+  border-color: blue;
+  background-color: darkorange;
+}
+
+.dashboard-X {
+  box-shadow: 2px 4px 24px red;
+  border-color: red;
+  background-color: darkorange;
+}
+
+.dashboard-friends {
+  box-shadow: 2px 4px 24px green;
+  border-color: green;
+  background-color: darkorange;
+}
+
+.playerO, .playerX {
+  padding: 0 5px;
+  border-radius: 3px;
+
+  font-size: 1.5em;
+  line-height: 1.5em;
+  font-weight: 700;
+  transition: box-shadow ease 0.3s;
+}
+
+.playerO-active {
+  color: blue;
+  box-shadow: 2px 4px 24px blue;
+}
+
+.playerX-active {
+  color: red;
+  box-shadow: 2px 4px 24px red;
+}
+
+.title {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}

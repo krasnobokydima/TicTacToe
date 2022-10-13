@@ -1,0 +1,20 @@
+<ng-container class="mat-dialog-container">
+  <h1 mat-dialog-title>{{ title }}</h1>
+  <div mat-dialog-content>
+    <mat-form-field *ngIf="gameService.isGameWork" appearance="fill">
+      <mat-label>Enter a player name</mat-label>
+      <input
+        matInput
+        [(ngModel)]="playerName"
+        appearance="fill"
+        (keyup.enter)="startGame()"
+      />
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions class="button-container">
+    <button mat-raised-button color="primary" (click)="startGame()">
+      {{ gameService.isGameWork ? "START" : "RESTART" }}
+    </button>
+    <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+  </div>
+</ng-container>
